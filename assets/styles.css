@@ -1355,8 +1355,8 @@ body {
 
 .home-hero-grid {
   min-height: 586px;
-  grid-template-columns: minmax(520px, 0.94fr) minmax(500px, 1.06fr);
-  gap: 28px;
+  grid-template-columns: minmax(560px, 0.98fr) minmax(520px, 1.02fr);
+  gap: 44px;
 }
 
 .home-hero-copy {
@@ -1460,6 +1460,7 @@ body {
   justify-content: flex-end;
   min-width: 0;
   isolation: isolate;
+  transform: translateX(96px);
 }
 
 .hero-visual-composite::before {
@@ -1482,10 +1483,10 @@ body {
 .hero-clinic-image {
   position: relative;
   z-index: 1;
-  width: min(810px, 58vw);
+  width: min(820px, 56vw);
   height: 570px;
   max-width: none;
-  margin: 10px -12px 0 0;
+  margin: 10px -94px 0 0;
   object-fit: contain;
   object-position: center;
   border-radius: 22px;
@@ -2739,6 +2740,10 @@ body {
     height: auto;
     margin: 20px 0 0;
     border-radius: 0;
+  }
+
+  .hero-visual {
+    transform: none;
   }
 
   .hero-orbit.one {
