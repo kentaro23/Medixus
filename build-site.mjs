@@ -39,7 +39,7 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260428-os-logo-icon";
+const assetVersion = "20260428-os-natural-logo";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
@@ -474,7 +474,7 @@ function osPage() {
       <div class="container os-detail-grid">
         <div class="os-orbit reveal" aria-label="Medixus OSの機能構成">
           <div class="orbit-center">
-            <span class="orbit-logo-frame"><img class="orbit-logo-mark" src="/assets/images/medixus-mark-exact.png" alt="" aria-hidden="true"></span>
+            <img class="orbit-logo-mark" src="/assets/images/medixus-mark-exact.png" alt="" aria-hidden="true">
             <strong>Medixus OS</strong>
           </div>
           <div class="orbit-node node-1"><span class="line-icon chat"></span><b>AI問診</b></div>
