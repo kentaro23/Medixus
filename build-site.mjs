@@ -39,7 +39,7 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260428-typography-refine";
+const assetVersion = "20260428-scroll-cue";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
