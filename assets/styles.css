@@ -1338,17 +1338,19 @@ body {
   padding: 132px 0 0;
   overflow: hidden;
   background:
-    radial-gradient(circle at 72% 22%, rgba(41, 149, 255, 0.18), transparent 26rem),
-    linear-gradient(100deg, #fff 0%, #fff 44%, #eef7ff 100%);
+    radial-gradient(ellipse at 72% 27%, rgba(83, 164, 255, 0.18), transparent 30rem),
+    radial-gradient(ellipse at 80% 68%, rgba(128, 195, 255, 0.18), transparent 34rem),
+    linear-gradient(104deg, #fff 0%, #fff 42%, #f3f9ff 68%, #edf6ff 100%);
   border-bottom: 1px solid #e9f1fb;
 }
 
 .home-hero-v2::before {
-  width: 54vw;
-  height: 54vw;
-  inset: -10vw -8vw auto auto;
+  width: 58vw;
+  height: 58vw;
+  inset: -14vw -10vw auto auto;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(8, 104, 235, 0.13), rgba(255, 255, 255, 0.38));
+  background: radial-gradient(circle, rgba(83, 164, 255, 0.2), rgba(255, 255, 255, 0.04) 58%, transparent 72%);
+  filter: blur(4px);
 }
 
 .home-hero-v2::after {
@@ -1475,34 +1477,51 @@ body {
 .hero-visual-composite::before {
   content: "";
   position: absolute;
-  right: -4%;
-  top: 9%;
+  right: -8%;
+  top: 2%;
   z-index: -1;
-  width: 74%;
-  height: 66%;
+  width: 92%;
+  height: 84%;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(20, 126, 255, 0.16), rgba(20, 126, 255, 0.03) 56%, transparent 72%);
-  filter: blur(8px);
+  background:
+    radial-gradient(ellipse at 52% 46%, rgba(37, 132, 255, 0.16), rgba(118, 190, 255, 0.06) 48%, transparent 72%),
+    linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.62) 26%, rgba(230, 244, 255, 0.7) 100%);
+  filter: blur(14px);
+}
+
+.hero-visual-composite::after {
+  content: "";
+  position: absolute;
+  inset: 0 -14% -10% 4%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0) 16%, rgba(255, 255, 255, 0) 78%, rgba(247, 251, 255, 0.88) 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0) 24%, rgba(255, 255, 255, 0) 82%, rgba(238, 247, 255, 0.66) 100%);
 }
 
 .hero-clinic-image {
+  position: relative;
+  z-index: 1;
   width: min(910px, 64vw);
   height: 600px;
   max-width: none;
-  margin: 0 -92px 0 0;
+  margin: 6px -92px 0 0;
   object-fit: contain;
   object-position: center;
   border-radius: 0;
-  filter: drop-shadow(0 26px 52px rgba(9, 40, 86, 0.1));
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 93%, transparent 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 93%, transparent 100%);
+  filter:
+    drop-shadow(0 26px 52px rgba(9, 40, 86, 0.08))
+    saturate(0.98);
+  -webkit-mask-image: radial-gradient(ellipse 78% 72% at 58% 55%, #000 0%, #000 58%, rgba(0, 0, 0, 0.72) 72%, transparent 91%);
+  mask-image: radial-gradient(ellipse 78% 72% at 58% 55%, #000 0%, #000 58%, rgba(0, 0, 0, 0.72) 72%, transparent 91%);
 }
 
 .hero-exact-mark {
   position: absolute;
   left: 51%;
   top: 18%;
-  z-index: 2;
+  z-index: 3;
   width: min(300px, 21vw);
   height: auto;
   opacity: 0.98;

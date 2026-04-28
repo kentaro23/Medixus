@@ -39,7 +39,7 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260428-scroll-cue";
+const assetVersion = "20260428-transparent-hero";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
@@ -244,7 +244,7 @@ function homeHero() {
           </div>
         </div>
         <div class="hero-visual hero-visual-composite reveal" aria-label="Medixus Clinicと医療プラットフォームのイメージ">
-          ${image("/assets/images/medixus-hero-scene-no-logo.png", "Medixus Clinicと医療プラットフォームの背景イメージ", "hero-clinic-image")}
+          ${image("/assets/images/medixus-hero-scene-transparent.png", "Medixus Clinicと医療プラットフォームの背景イメージ", "hero-clinic-image")}
           <img class="hero-exact-mark" src="/assets/images/medixus-mark-exact.png" alt="" aria-hidden="true" loading="eager" decoding="async">
           <span class="hero-orbit one" aria-hidden="true"></span>
           <span class="hero-orbit two" aria-hidden="true"></span>
