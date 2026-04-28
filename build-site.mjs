@@ -39,7 +39,7 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260428-about-vision-investor";
+const assetVersion = "20260428-os-logo-icon";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
@@ -473,7 +473,10 @@ function osPage() {
     <section class="section page-main-section os-detail-section">
       <div class="container os-detail-grid">
         <div class="os-orbit reveal" aria-label="Medixus OSの機能構成">
-          <div class="orbit-center"><span class="footer-logo-mark">∞</span><strong>Medixus OS</strong></div>
+          <div class="orbit-center">
+            <span class="orbit-logo-frame"><img class="orbit-logo-mark" src="/assets/images/medixus-mark-exact.png" alt="" aria-hidden="true"></span>
+            <strong>Medixus OS</strong>
+          </div>
           <div class="orbit-node node-1"><span class="line-icon chat"></span><b>AI問診</b></div>
           <div class="orbit-node node-2"><span class="line-icon calendar"></span><b>予約管理</b></div>
           <div class="orbit-node node-3"><span class="line-icon doctor"></span><b>オンライン診療</b></div>
