@@ -1,0 +1,19 @@
+.DS_Store
+.vercel
+node_modules
+npm-debug.log*
+tmp-*.png
+
+# Keep only the production assets referenced by the static pages.
+assets/images/*
+!assets/images/about-reception-photo.jpg
+!assets/images/business-flow.jpg
+!assets/images/hero-clinic-startup.jpg
+!assets/images/ir-growth.jpg
+!assets/images/medixus-hero-scene-no-logo.png
+!assets/images/medixus-logo-footer.png
+!assets/images/medixus-logo.png
+!assets/images/medixus-mark-exact.png
+!assets/images/medixus-product-hero.jpg
+!assets/images/os-dashboard.jpg
+!assets/images/recruit-workspace.jpg
