@@ -39,7 +39,7 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260428-hero-board-restore";
+const assetVersion = "20260428-home-hero-final";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
@@ -244,11 +244,7 @@ function homeHero() {
           </div>
         </div>
         <div class="hero-visual hero-visual-composite reveal" aria-label="Medixus Clinicと医療プラットフォームのイメージ">
-          ${image("/assets/images/medixus-hero-scene-transparent.png", "Medixus Clinicと医療プラットフォームの背景イメージ", "hero-clinic-image")}
-          <img class="hero-exact-mark" src="/assets/images/medixus-mark-exact.png" alt="" aria-hidden="true" loading="eager" decoding="async">
-          <span class="hero-data-board" aria-hidden="true"></span>
-          <span class="hero-orbit one" aria-hidden="true"></span>
-          <span class="hero-orbit two" aria-hidden="true"></span>
+          ${image("/assets/images/medixus-home-hero-final.png", "Medixus Clinicと医療プラットフォームの背景イメージ", "hero-clinic-image")}
         </div>
       </div>
       <a class="scroll-cue" href="#problem">SCROLL<span></span></a>
@@ -792,7 +788,7 @@ const pages = [
     title: "Medixus - すべての人に最高の医療を。",
     description: "すべての人に最高の医療を。AIクリニック運営支援・統合AI医療プラットフォームを通じて、医療体験を再設計するMedixus。",
     body: homePage,
-    ogImage: "/assets/images/medixus-hero-scene-no-logo.png",
+    ogImage: "/assets/images/medixus-home-hero-final.png",
     schema: orgSchema,
   },
   {
