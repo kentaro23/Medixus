@@ -1492,6 +1492,8 @@ body {
   filter:
     drop-shadow(0 26px 52px rgba(9, 40, 86, 0.08))
     saturate(0.98);
+  -webkit-mask-image: radial-gradient(ellipse 74% 68% at 57% 61%, #000 0%, #000 62%, rgba(0, 0, 0, 0.66) 76%, transparent 96%);
+  mask-image: radial-gradient(ellipse 74% 68% at 57% 61%, #000 0%, #000 62%, rgba(0, 0, 0, 0.66) 76%, transparent 96%);
 }
 
 .hero-exact-mark {
