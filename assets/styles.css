@@ -1353,18 +1353,6 @@ body {
   filter: blur(4px);
 }
 
-.home-hero-v2::after {
-  content: "";
-  position: absolute;
-  right: 8%;
-  bottom: 0;
-  width: 28%;
-  height: 140px;
-  background-image: radial-gradient(rgba(7, 94, 216, 0.24) 1.5px, transparent 1.5px);
-  background-size: 14px 14px;
-  opacity: 0.32;
-}
-
 .home-hero-grid {
   min-height: 586px;
   grid-template-columns: minmax(520px, 0.94fr) minmax(500px, 1.06fr);
@@ -1477,40 +1465,27 @@ body {
 .hero-visual-composite::before {
   content: "";
   position: absolute;
-  right: -8%;
-  top: 2%;
+  right: -2%;
+  top: 8%;
   z-index: -1;
-  width: 92%;
-  height: 84%;
+  width: 82%;
+  height: 72%;
   border-radius: 999px;
-  background:
-    radial-gradient(ellipse at 52% 46%, rgba(37, 132, 255, 0.16), rgba(118, 190, 255, 0.06) 48%, transparent 72%),
-    linear-gradient(115deg, transparent 0%, rgba(193, 216, 241, 0.22) 30%, rgba(118, 158, 205, 0.18) 100%);
-  filter: blur(14px);
+  background: radial-gradient(ellipse at 54% 48%, rgba(61, 150, 255, 0.16), rgba(126, 199, 255, 0.05) 54%, transparent 74%);
+  filter: blur(18px);
 }
 
 .hero-visual-composite::after {
-  content: "";
-  position: absolute;
-  inset: 5% -12% 3% 12%;
-  z-index: 0;
-  pointer-events: none;
-  border-radius: 22px;
-  background:
-    linear-gradient(180deg, rgba(7, 24, 53, 0.075), rgba(7, 24, 53, 0.035)),
-    rgba(50, 75, 112, 0.045);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.24),
-    0 28px 74px rgba(23, 67, 127, 0.08);
+  display: none;
 }
 
 .hero-clinic-image {
   position: relative;
   z-index: 1;
-  width: min(910px, 64vw);
-  height: 600px;
+  width: min(810px, 58vw);
+  height: 570px;
   max-width: none;
-  margin: 6px -92px 0 0;
+  margin: 12px -16px 0 0;
   object-fit: contain;
   object-position: center;
   border-radius: 0;
