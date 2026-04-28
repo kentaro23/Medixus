@@ -1514,6 +1514,56 @@ body {
   background: transparent;
 }
 
+.hero-data-board {
+  position: absolute;
+  right: -1%;
+  top: 11%;
+  z-index: 2;
+  width: min(320px, 23vw);
+  aspect-ratio: 1.72;
+  border: 1px solid rgba(80, 151, 238, 0.34);
+  border-radius: 16px;
+  background:
+    linear-gradient(90deg, rgba(25, 107, 224, 0.15) 0 10px, transparent 10px) 92% 18% / 18px 72% no-repeat,
+    linear-gradient(180deg, rgba(255, 255, 255, 0.54), rgba(189, 222, 255, 0.26)),
+    rgba(216, 237, 255, 0.34);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.62),
+    inset 0 -1px 0 rgba(64, 137, 229, 0.16),
+    0 18px 48px rgba(34, 103, 188, 0.08);
+  backdrop-filter: blur(4px);
+  opacity: 0.74;
+  transform: perspective(620px) rotateY(-8deg) rotateZ(1deg);
+}
+
+.hero-data-board::before {
+  content: "";
+  position: absolute;
+  left: 12%;
+  top: 24%;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background:
+    conic-gradient(from -30deg, rgba(7, 94, 216, 0.88) 0 72deg, rgba(92, 173, 255, 0.46) 72deg 154deg, rgba(255, 255, 255, 0.48) 154deg 360deg);
+  box-shadow: inset 0 0 0 13px rgba(224, 240, 255, 0.72);
+}
+
+.hero-data-board::after {
+  content: "";
+  position: absolute;
+  right: 18%;
+  bottom: 22%;
+  width: 92px;
+  height: 82px;
+  background:
+    linear-gradient(180deg, rgba(7, 94, 216, 0.64), rgba(82, 175, 255, 0.6)) 0 44px / 13px 38px no-repeat,
+    linear-gradient(180deg, rgba(7, 94, 216, 0.7), rgba(82, 175, 255, 0.62)) 22px 28px / 13px 54px no-repeat,
+    linear-gradient(180deg, rgba(7, 94, 216, 0.6), rgba(82, 175, 255, 0.54)) 44px 35px / 13px 47px no-repeat,
+    linear-gradient(180deg, rgba(7, 94, 216, 0.82), rgba(82, 175, 255, 0.66)) 66px 14px / 13px 68px no-repeat;
+  filter: drop-shadow(0 8px 13px rgba(7, 94, 216, 0.12));
+}
+
 .hero-orbit {
   position: absolute;
   z-index: 1;
