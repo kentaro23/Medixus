@@ -1,6 +1,6 @@
 # Medixus Corporate Site
 
-Medixus株式会社のコーポレートHP静的サイトです。
+株式会社MedixusのコーポレートHP静的サイトです。
 
 ## ローカル確認
 

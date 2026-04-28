@@ -27,7 +27,7 @@ const contactOptions = [
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Medixus株式会社",
+  name: "株式会社Medixus",
   alternateName: "Medixus, Inc.",
   url: "https://medixus.jp",
   foundingDate: "2025",
@@ -39,7 +39,7 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260428-exact-logo-hero";
+const assetVersion = "20260428-about-vision-investor";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
@@ -657,11 +657,12 @@ function simpleCard(title, copy) {
 
 function aboutPage() {
   const rows = [
-    ["法人名", "Medixus株式会社（Medixus, Inc.）"],
+    ["法人名", "株式会社Medixus（Medixus, Inc.）"],
     ["設立", "2026年4月22日"],
     ["代表取締役", "大原健太郎"],
     ["所在地", "神奈川県相模原市南区"],
     ["資本金", "30万円"],
+    ["主要投資家", "Skyland Ventures"],
     ["事業内容", "医療プラットフォームの開発 / 無人クリニックの企画・運営 / 医療機関向けBPOサービス"],
   ];
 
@@ -675,13 +676,13 @@ function aboutPage() {
         </div>
         <aside class="about-brand-panel reveal" aria-label="Medixus brand panel">
           <div class="brand-photo">
-            <img class="brand-photo-image" src="/assets/images/about-reception-photo.jpg" alt="Medixusのコーポレート受付イメージ">
+            <img class="brand-photo-image" src="/assets/images/about-trust-office.jpg" alt="Medixusのコーポレート空間イメージ">
           </div>
         </aside>
       </div>
       <div class="container">
         <div class="mission-panel reveal">
-          <p>Mission</p>
+          <p>Vision</p>
           <h2>すべての人に最高の医療を</h2>
           <span>AIとテクノロジーの力で、時間とアクセス格差をなくし、いつでも、どこでも、誰もが最高の医療を受けられる社会を実現します。</span>
         </div>
@@ -765,7 +766,7 @@ function privacyPage() {
       <div class="container reveal">
         <p class="eyebrow">Privacy</p>
         <h1>プライバシーポリシー</h1>
-        <p>Medixus株式会社は、個人情報を適切に取り扱います。</p>
+        <p>株式会社Medixusは、個人情報を適切に取り扱います。</p>
       </div>
     </section>
 
@@ -835,8 +836,8 @@ const pages = [
   {
     slug: "about",
     path: "about/index.html",
-    title: "会社概要 - Medixus株式会社",
-    description: "AI医療プラットフォームを開発するMedixus株式会社。",
+    title: "会社概要 - 株式会社Medixus",
+    description: "AI医療プラットフォームを開発する株式会社Medixus。",
     body: aboutPage,
     schema: orgSchema,
   },
@@ -852,7 +853,7 @@ const pages = [
     slug: "privacy",
     path: "privacy/index.html",
     title: "プライバシーポリシー - Medixus",
-    description: "Medixus株式会社のプライバシーポリシー。",
+    description: "株式会社Medixusのプライバシーポリシー。",
     body: privacyPage,
     schema: orgSchema,
   },
