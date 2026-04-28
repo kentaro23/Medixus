@@ -8,6 +8,7 @@ tmp-*.png
 assets/images/*
 !assets/images/about-reception-photo.jpg
 !assets/images/about-trust-office.jpg
+!assets/images/medixus-office.jpg
 !assets/images/business-flow.jpg
 !assets/images/hero-clinic-startup.jpg
 !assets/images/ir-growth.jpg

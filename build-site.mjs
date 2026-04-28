@@ -39,7 +39,7 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260428-transparent-hero";
+const assetVersion = "20260428-office-photo";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
@@ -682,7 +682,7 @@ function aboutPage() {
         </div>
         <aside class="about-brand-panel reveal" aria-label="Medixus brand panel">
           <div class="brand-photo">
-            <img class="brand-photo-image" src="/assets/images/about-trust-office.jpg" alt="Medixusのコーポレート空間イメージ">
+            <img class="brand-photo-image" src="/assets/images/medixus-office.jpg" alt="Medixusの事務所受付イメージ">
           </div>
         </aside>
       </div>
