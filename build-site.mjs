@@ -39,7 +39,7 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260428-os-natural-logo";
+const assetVersion = "20260428-typography-refine";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
@@ -172,6 +172,9 @@ function layout(page, body) {
         <meta name="twitter:description" content="${description}">
         <meta name="twitter:image" content="${absoluteOgImage}">
         <link rel="icon" href="/assets/images/medixus-logo.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/assets/styles.css?v=${assetVersion}">
         ${schemas}
       </head>
