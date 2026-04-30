@@ -39,7 +39,7 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260428-home-hero-shift-right";
+const assetVersion = "20260430-clinic-ir-about";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
@@ -118,7 +118,7 @@ function footer() {
         </div>
         <div>
           <h2>事業内容</h2>
-          <a href="/business/">Medixus Clinic</a>
+          <a href="/clinic/">Medixus Clinic</a>
           <a href="/os/">Medixus OS / BPO</a>
           <a href="/ir/">IR</a>
         </div>
@@ -301,9 +301,9 @@ function homePage() {
     <section class="section clinic-plan" id="about">
       <div class="container clinic-grid">
         <div class="reveal">
-          <h2>AI完全無人クリニック<br>全国300店舗へ</h2>
+          <h2>Medixus Clinic<br>全国300店舗へ</h2>
           <p>Medixus Clinicは、テクノロジーで医療体験を再定義する次世代型クリニックです。受付、問診、会計、診療補助をデジタル化し、必要な医療にスムーズにつながる受診体験を全国へ広げます。</p>
-          <a class="button button-outline" href="/business/">詳しく見る</a>
+          <a class="button button-outline" href="/clinic/">詳しく見る</a>
         </div>
         <div class="clinic-feature-grid reveal">
           ${clinicFeature("駅前立地で<br>アクセス抜群")}
@@ -431,7 +431,7 @@ function businessPage() {
         <div class="service-card-grid">
           ${serviceCard("monitor", "Medixus OS", "AIとテクノロジーを活用した医療プラットフォーム。予約、問診、カルテ、会計、決済、データ分析などを一元管理。", "/os/")}
           ${serviceCard("users", "BPOサービス", "医療機関のバックオフィス業務を最適化・代行。人材不足の解消とコスト削減を実現します。", "/contact/?type=partner")}
-          ${serviceCard("building", "無人クリニック運営", "AI完全無人クリニックの企画・運営。継続的に運用知見を蓄積し、全国展開を目指します。", "/business/")}
+          ${serviceCard("building", "Medixus Clinic", "テクノロジーを前提に設計した次世代型クリニック。受付、問診、会計、診療補助をデジタル化し、よりよい受診体験を全国へ広げます。", "/clinic/")}
         </div>
 
         <div class="business-map-panel reveal">
@@ -456,6 +456,48 @@ function serviceCard(icon, title, copy, href) {
       <p>${copy}</p>
       <strong>詳しく見る 〉</strong>
     </a>
+  `;
+}
+
+function clinicPage() {
+  return html`
+    ${subpageHead("Medixus Clinic", "Clinic", "テクノロジーで医療体験を再定義する次世代型クリニック。")}
+
+    <section class="section page-main-section">
+      <div class="container split">
+        <div class="reveal">
+          <p class="kicker">Medixus Clinic</p>
+          <h2>いつでも、どこでも、誰もが最高の医療につながる拠点へ。</h2>
+          <p class="large-copy">Medixus Clinicは、受付、問診、会計、診療補助をデジタル化し、医療従事者が本来の医療行為に集中できる環境を整えるクリニックモデルです。</p>
+          <ul class="check-list large-list">
+            <li>予約から問診、会計までをスムーズに接続</li>
+            <li>Medixus OSと連携した運営データの可視化</li>
+            <li>駅前・生活圏に展開しやすいコンパクトな設計</li>
+          </ul>
+        </div>
+        <figure class="feature-visual reveal">
+          ${image("/assets/images/hero-clinic-startup.jpg", "Medixus Clinicのクリニックイメージ")}
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        ${sectionHeader("Features", "Medixus Clinicの特徴")}
+        <div class="business-grid compact">
+          ${simpleCard("患者体験の向上", "待ち時間や手続きの負担を減らし、受診までの流れをわかりやすく整えます。")}
+          ${simpleCard("運営の標準化", "現場のオペレーションをデータで把握し、継続的な改善につなげます。")}
+          ${simpleCard("医療アクセスの拡張", "都市部から生活圏まで、必要な医療につながる接点を増やします。")}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cta">
+      <div class="container center">
+        <h2>Medixus Clinicに関するご相談はこちら。</h2>
+        <a class="button button-primary" href="/contact/?type=partner">パートナー・提携のご相談</a>
+      </div>
+    </section>
   `;
 }
 
@@ -598,7 +640,6 @@ function irPage() {
         <div class="business-grid compact">
           ${simpleCard("Medixus Clinic", "AIを前提に設計したクリニックチェーン。")}
           ${simpleCard("Medixus OS", "クリニック向け統合AI医療プラットフォーム。")}
-          ${simpleCard("Medixus Home", "AI支援型訪問診療。今後展開予定。")}
         </div>
       </div>
     </section>
@@ -665,8 +706,9 @@ function aboutPage() {
     ["代表取締役", "大原健太郎"],
     ["所在地", "神奈川県相模原市南区"],
     ["資本金", "30万円"],
-    ["主要投資家", "Skyland Ventures"],
-    ["事業内容", "医療プラットフォームの開発 / 無人クリニックの企画・運営 / 医療機関向けBPOサービス"],
+    ["株主構成", "大原健太郎 100%"],
+    ["主要投資家", "Skyland Ventures（J-KISS）"],
+    ["事業内容", "医療プラットフォームの開発 / Medixus Clinicの企画・運営 / 医療機関向けBPOサービス"],
   ];
 
   return html`
@@ -795,9 +837,18 @@ const pages = [
     slug: "business",
     path: "business/index.html",
     title: "事業紹介 - Medixus",
-    description: "AIクリニックチェーン・統合OS・訪問診療の3事業でクリニック運営を革新。",
+    description: "Medixus Clinic・Medixus OS・BPOサービスでクリニック運営を革新。",
     body: businessPage,
     ogImage: "/assets/images/business-flow.jpg",
+    schema: orgSchema,
+  },
+  {
+    slug: "clinic",
+    path: "clinic/index.html",
+    title: "Medixus Clinic - Medixus",
+    description: "テクノロジーで医療体験を再定義する次世代型クリニック。",
+    body: clinicPage,
+    ogImage: "/assets/images/hero-clinic-startup.jpg",
     schema: orgSchema,
   },
   {

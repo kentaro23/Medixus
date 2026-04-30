@@ -732,6 +732,29 @@ h3 {
   align-items: center;
 }
 
+.large-copy {
+  margin: 18px 0 26px;
+  color: #40536f;
+  font-size: 1.05rem;
+  line-height: 1.95;
+}
+
+.feature-visual {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid rgba(185, 205, 235, 0.72);
+  border-radius: 12px;
+  background: #f6faff;
+  box-shadow: 0 20px 60px rgba(20, 67, 133, 0.12);
+}
+
+.feature-visual img {
+  width: 100%;
+  min-height: 360px;
+  display: block;
+  object-fit: cover;
+}
+
 .news-layout {
   display: grid;
   grid-template-columns: 0.45fr 1fr;
