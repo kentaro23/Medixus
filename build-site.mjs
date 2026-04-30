@@ -39,7 +39,7 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260430-bpo-icons";
+const assetVersion = "20260430-recruit-positions";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
@@ -131,7 +131,7 @@ function footer() {
         <div>
           <h2>採用情報</h2>
           <a href="/recruit/">採用メッセージ</a>
-          <a href="/recruit/">募集職種一覧</a>
+          <a href="/recruit/#positions">募集職種一覧</a>
           <div class="footer-actions">
             <a class="footer-button" href="/contact/?type=partner">パートナー・提携のご相談</a>
             <a class="footer-button" href="/contact/">お問い合わせ</a>
@@ -632,6 +632,33 @@ const recruitFaq = [
   ["研修は？", "オンライン1時間を予定しています。"],
 ];
 
+const recruitPositions = [
+  {
+    title: "CTO候補",
+    type: "経営 / Product & Engineering",
+    copy: "Medixus OSとクリニック運営基盤の技術戦略、プロダクト設計、開発組織づくりを担うポジションです。",
+    tags: ["技術戦略", "プロダクト設計", "開発組織"],
+  },
+  {
+    title: "COO候補",
+    type: "経営 / Operations",
+    copy: "クリニック展開、BPO、採用、パートナー連携を横断し、事業運営を前に進めるポジションです。",
+    tags: ["事業推進", "オペレーション", "提携"],
+  },
+  {
+    title: "フルスタックエンジニア",
+    type: "Engineering",
+    copy: "医療現場で使われるWebアプリケーション、業務システム、AI連携機能を実装するポジションです。",
+    tags: ["Frontend", "Backend", "AI連携"],
+  },
+  {
+    title: "マーケティング責任者",
+    type: "Growth / Marketing",
+    copy: "Medixus Clinic、Medixus OS、BPOの認知獲得、リード創出、ブランド設計を担うポジションです。",
+    tags: ["ブランド", "リード獲得", "広報"],
+  },
+];
+
 function recruitPage() {
   return html`
     ${subpageHead("採用情報", "Recruit", "医療の未来を、私たちと一緒に創りませんか？")}
@@ -650,9 +677,18 @@ function recruitPage() {
             ${recruitBenefit("monitor", "成長できる環境", "急成長フェーズの中で、圧倒的に成長できます。")}
           </div>
           <div class="recruit-cta-row">
-            <a class="button button-primary" href="/contact/?type=recruit">採用エントリー・募集職種一覧はこちら</a>
-            <a class="button button-outline" href="/contact/?type=recruit">採用情報を見る</a>
+            <a class="button button-primary" href="#positions">採用エントリー・募集職種一覧はこちら</a>
+            <a class="button button-outline" href="#positions">採用情報を見る</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft recruit-positions-section" id="positions">
+      <div class="container">
+        ${sectionHeader("Open Positions", "募集職種一覧", "現在、事業とプロダクトを一緒につくる創業初期メンバーを募集しています。")}
+        <div class="position-grid">
+          ${recruitPositions.map((position) => positionCard(position)).join("")}
         </div>
       </div>
     </section>
@@ -665,6 +701,21 @@ function recruitBenefit(icon, title, copy) {
       <span class="line-icon ${icon}"></span>
       <h3>${title}</h3>
       <p>${copy}</p>
+    </article>
+  `;
+}
+
+function positionCard(position) {
+  const href = `/contact/?type=recruit&job=${encodeURIComponent(position.title)}`;
+  return html`
+    <article class="position-card reveal">
+      <p>${position.type}</p>
+      <h3>${position.title}</h3>
+      <span>${position.copy}</span>
+      <div class="position-tags">
+        ${position.tags.map((tag) => `<em>${tag}</em>`).join("")}
+      </div>
+      <a class="button button-outline" href="${href}">この職種に応募する</a>
     </article>
   `;
 }
@@ -833,7 +884,7 @@ function contactPage() {
               ${selectOptions()}
             </select>
           </label>
-          <label>お問い合わせ内容（必須）<textarea name="message" rows="8" required></textarea></label>
+          <label>お問い合わせ内容（必須）<textarea name="message" rows="8" required data-contact-message></textarea></label>
           <button class="button button-primary" type="submit">送信する</button>
           <p class="form-status" aria-live="polite"></p>
         </form>

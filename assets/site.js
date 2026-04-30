@@ -92,6 +92,12 @@ if (contactType) {
   };
   const type = params.get("type");
   if (type && map[type]) contactType.value = map[type];
+
+  const job = params.get("job");
+  const message = document.querySelector("[data-contact-message]");
+  if (job && message && !message.value) {
+    message.value = `応募職種: ${job}\n\n`;
+  }
 }
 
 document.querySelectorAll("[data-static-form]").forEach((form) => {

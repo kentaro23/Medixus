@@ -2782,6 +2782,71 @@ body {
   background: linear-gradient(100deg, #0057d8, #0047bf);
 }
 
+.recruit-positions-section {
+  scroll-margin-top: 96px;
+}
+
+.position-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.position-card {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px;
+  border: 1px solid rgba(185, 205, 235, 0.72);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 44px rgba(20, 67, 133, 0.08);
+}
+
+.position-card p {
+  margin: 0 0 10px;
+  color: var(--blue);
+  font-size: 0.78rem;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.position-card h3 {
+  margin: 0 0 12px;
+  color: #10264d;
+  font-size: 1.35rem;
+}
+
+.position-card span {
+  color: #40536f;
+  line-height: 1.85;
+}
+
+.position-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0 24px;
+}
+
+.position-tags em {
+  padding: 7px 10px;
+  color: #075ed8;
+  background: #edf5ff;
+  border: 1px solid #cfe2fb;
+  border-radius: 999px;
+  font-style: normal;
+  font-size: 0.82rem;
+  font-weight: var(--weight-medium);
+}
+
+.position-card .button {
+  margin-top: auto;
+  width: 100%;
+}
+
 .news-table-large .news-row {
   min-height: 74px;
 }
@@ -2888,7 +2953,8 @@ body {
   .os-detail-grid,
   .business-map-panel,
   .os-cta-panel,
-  .recruit-cta-row {
+  .recruit-cta-row,
+  .position-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2985,7 +3051,8 @@ body {
   }
 
   .service-card-grid,
-  .recruit-card-grid {
+  .recruit-card-grid,
+  .position-grid {
     grid-template-columns: 1fr;
   }
 
