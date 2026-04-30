@@ -2568,6 +2568,18 @@ body {
   border-radius: 8px;
   background: linear-gradient(90deg, #eef6ff 0%, #f7fbff 100%);
   text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.mission-item {
+  scroll-margin-top: 112px;
+  padding: 18px 22px;
+}
+
+.mission-item + .mission-item {
+  border-left: 1px solid rgba(164, 194, 233, 0.72);
 }
 
 .mission-panel p {
@@ -3066,6 +3078,15 @@ body {
   .os-cta-panel,
   .recruit-panel {
     padding: 26px 18px;
+  }
+
+  .mission-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-item + .mission-item {
+    border-left: 0;
+    border-top: 1px solid rgba(164, 194, 233, 0.72);
   }
 
   .os-orbit {

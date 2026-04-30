@@ -39,7 +39,7 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260430-recruit-positions";
+const assetVersion = "20260430-mission-vision";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
@@ -114,7 +114,8 @@ function footer() {
           <h2>私たちについて</h2>
           <a href="/about/">会社概要</a>
           <a href="/about/#message">代表メッセージ</a>
-          <a href="/about/">ビジョン・ミッション</a>
+          <a href="/about/#mission">Mission</a>
+          <a href="/about/#vision">Vision</a>
         </div>
         <div>
           <h2>事業内容</h2>
@@ -823,9 +824,14 @@ function aboutPage() {
       </div>
       <div class="container">
         <div class="mission-panel reveal">
-          <p>Vision</p>
-          <h2>すべての人に最高の医療を</h2>
-          <span>AIとテクノロジーの力で、時間とアクセス格差をなくし、いつでも、どこでも、誰もが最高の医療を受けられる社会を実現します。</span>
+          <div class="mission-item" id="mission">
+            <p>Mission</p>
+            <h2>すべての人に最高の医療を</h2>
+          </div>
+          <div class="mission-item" id="vision">
+            <p>Vision</p>
+            <h2>医療の待ち時間とアクセス格差をAIでなくす</h2>
+          </div>
         </div>
       </div>
     </section>
