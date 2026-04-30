@@ -39,7 +39,7 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260430-clinic-ir-about";
+const assetVersion = "20260430-bpo-icons";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
@@ -119,7 +119,8 @@ function footer() {
         <div>
           <h2>事業内容</h2>
           <a href="/clinic/">Medixus Clinic</a>
-          <a href="/os/">Medixus OS / BPO</a>
+          <a href="/os/">Medixus OS</a>
+          <a href="/bpo/">BPOサービス</a>
           <a href="/ir/">IR</a>
         </div>
         <div>
@@ -287,9 +288,9 @@ function homePage() {
           </div>
         </div>
         <div class="benefit-grid">
-          ${benefitCard("患者: 待たない", "気になった時にすぐに相談し、快適に受診できる")}
-          ${benefitCard("医師: 柔軟に働ける", "OS内で問診からカルテまで一体化し、診療に集中できる")}
-          ${benefitCard("病院: 省人化・効率化", "医療者が必要な時間帯のみ稼働し、現場負荷を軽減できる")}
+          ${benefitCard("user", "患者: 待たない", "気になった時にすぐに相談し、快適に受診できる")}
+          ${benefitCard("stethoscope", "医師: 柔軟に働ける", "OS内で問診からカルテまで一体化し、診療に集中できる")}
+          ${benefitCard("operations", "病院: 省人化・効率化", "医療者が必要な時間帯のみ稼働し、現場負荷を軽減できる")}
         </div>
         <div class="info-strip reveal">
           <span class="line-icon monitor"></span>
@@ -372,10 +373,10 @@ function osIcon(icon, label) {
   `;
 }
 
-function benefitCard(title, copy) {
+function benefitCard(icon, title, copy) {
   return html`
     <article class="benefit-card reveal">
-      <span class="line-icon user"></span>
+      <span class="line-icon ${icon}"></span>
       <h3>${title}</h3>
       <p>${copy}</p>
     </article>
@@ -430,7 +431,7 @@ function businessPage() {
         <h2 class="page-section-title reveal">医療の未来を支える3つの事業</h2>
         <div class="service-card-grid">
           ${serviceCard("monitor", "Medixus OS", "AIとテクノロジーを活用した医療プラットフォーム。予約、問診、カルテ、会計、決済、データ分析などを一元管理。", "/os/")}
-          ${serviceCard("users", "BPOサービス", "医療機関のバックオフィス業務を最適化・代行。人材不足の解消とコスト削減を実現します。", "/contact/?type=partner")}
+          ${serviceCard("operations", "BPOサービス", "医療機関のバックオフィス業務を最適化・代行。人材不足の解消とコスト削減を実現します。", "/bpo/")}
           ${serviceCard("building", "Medixus Clinic", "テクノロジーを前提に設計した次世代型クリニック。受付、問診、会計、診療補助をデジタル化し、よりよい受診体験を全国へ広げます。", "/clinic/")}
         </div>
 
@@ -495,6 +496,50 @@ function clinicPage() {
     <section class="section section-cta">
       <div class="container center">
         <h2>Medixus Clinicに関するご相談はこちら。</h2>
+        <a class="button button-primary" href="/contact/?type=partner">パートナー・提携のご相談</a>
+      </div>
+    </section>
+  `;
+}
+
+function bpoPage() {
+  return html`
+    ${subpageHead("BPOサービス", "BPO", "医療機関の運営を支えるバックオフィス支援。")}
+
+    <section class="section page-main-section">
+      <div class="container split">
+        <div class="reveal">
+          <p class="kicker">Business Process Operations</p>
+          <h2>医療現場が、医療に集中できる運営基盤を。</h2>
+          <p class="large-copy">MedixusのBPOサービスは、医療機関のバックオフィス業務、採用、集患、問い合わせ対応、データ集計を支援し、現場の負荷を減らす運営パートナーです。</p>
+          <ul class="check-list large-list">
+            <li>問い合わせ・予約・事務業務の運用支援</li>
+            <li>採用、HP、SEO、広告運用などの経営管理支援</li>
+            <li>Medixus OSと連携した運営データの可視化</li>
+          </ul>
+        </div>
+        <div class="bpo-visual reveal" aria-hidden="true">
+          <span class="line-icon operations"></span>
+          <strong>Operations</strong>
+          <p>Back office / Recruiting / Marketing / Data</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        ${sectionHeader("Scope", "支援領域")}
+        <div class="business-grid compact">
+          ${simpleCard("バックオフィス", "経理、問い合わせ、日々の事務処理など、クリニック運営に必要な業務を支援します。")}
+          ${simpleCard("採用・人材運用", "医師、看護師、スタッフ採用と稼働調整を、事業フェーズに合わせて設計します。")}
+          ${simpleCard("集患・広報", "HP、SEO、広告、口コミ対応など、地域で選ばれるための接点を整えます。")}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cta">
+      <div class="container center">
+        <h2>BPOサービスに関するご相談はこちら。</h2>
         <a class="button button-primary" href="/contact/?type=partner">パートナー・提携のご相談</a>
       </div>
     </section>
@@ -849,6 +894,15 @@ const pages = [
     description: "テクノロジーで医療体験を再定義する次世代型クリニック。",
     body: clinicPage,
     ogImage: "/assets/images/hero-clinic-startup.jpg",
+    schema: orgSchema,
+  },
+  {
+    slug: "bpo",
+    path: "bpo/index.html",
+    title: "BPOサービス - Medixus",
+    description: "医療機関のバックオフィス、採用、集患、データ活用を支援するBPOサービス。",
+    body: bpoPage,
+    ogImage: "/assets/images/business-flow.jpg",
     schema: orgSchema,
   },
   {

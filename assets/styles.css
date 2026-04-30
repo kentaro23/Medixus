@@ -755,6 +755,38 @@ h3 {
   object-fit: cover;
 }
 
+.bpo-visual {
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 16px;
+  padding: 44px;
+  border: 1px solid rgba(185, 205, 235, 0.72);
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(72, 153, 255, 0.2), transparent 16rem),
+    linear-gradient(145deg, #ffffff, #f0f7ff);
+  box-shadow: 0 20px 60px rgba(20, 67, 133, 0.12);
+  text-align: center;
+}
+
+.bpo-visual .line-icon {
+  width: 84px;
+  height: 84px;
+}
+
+.bpo-visual strong {
+  color: #10264d;
+  font-size: 1.4rem;
+  font-weight: var(--weight-semibold);
+}
+
+.bpo-visual p {
+  margin: 0;
+  color: #52647f;
+}
+
 .news-layout {
   display: grid;
   grid-template-columns: 0.45fr 1fr;
@@ -2019,6 +2051,53 @@ body {
   border: 2px solid currentColor;
   border-radius: 16px 16px 4px 4px;
   transform: translateY(10px);
+}
+
+.line-icon.stethoscope {
+  border-radius: 50%;
+}
+
+.line-icon.stethoscope::before {
+  top: 10px;
+  left: 11px;
+  width: 18px;
+  height: 18px;
+  border: 3px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 0 0 16px 16px;
+}
+
+.line-icon.stethoscope::after {
+  right: 10px;
+  bottom: 10px;
+  width: 9px;
+  height: 9px;
+  border: 3px solid currentColor;
+  border-radius: 50%;
+  box-shadow: -11px -9px 0 -7px currentColor;
+}
+
+.line-icon.operations::before {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background:
+    linear-gradient(currentColor, currentColor) center / 28px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 2px 28px no-repeat;
+  opacity: 0.72;
+}
+
+.line-icon.operations::after {
+  width: 8px;
+  height: 8px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    18px 0 0 -2px #fff, 18px 0 0 0 currentColor,
+    -18px 0 0 -2px #fff, -18px 0 0 0 currentColor,
+    0 18px 0 -2px #fff, 0 18px 0 0 currentColor,
+    0 -18px 0 -2px #fff, 0 -18px 0 0 currentColor;
 }
 
 .line-icon.puzzle::before {
