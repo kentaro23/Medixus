@@ -1926,8 +1926,8 @@ body {
 
 .cta-slab {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 520px;
-  gap: 58px;
+  grid-template-columns: minmax(0, 1fr) 480px;
+  gap: 46px;
   align-items: center;
   padding: 0;
   border: 0;
@@ -1937,6 +1937,7 @@ body {
 
 .cta-slab h2 {
   color: #fff;
+  white-space: nowrap;
 }
 
 .cta-slab p {
@@ -2630,6 +2631,71 @@ body {
   line-height: 1.9;
 }
 
+.message-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 54px;
+  align-items: start;
+}
+
+.message-lead {
+  position: sticky;
+  top: 110px;
+}
+
+.message-lead h2 {
+  margin: 0 0 18px;
+  color: #081b3f;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.32;
+  font-feature-settings: "palt";
+}
+
+.message-lead span {
+  display: block;
+  color: #40536f;
+  line-height: 1.9;
+}
+
+.message-body {
+  padding: 42px;
+  border: 1px solid rgba(185, 205, 235, 0.72);
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 251, 255, 0.92)),
+    #fff;
+  box-shadow: 0 18px 52px rgba(20, 67, 133, 0.1);
+}
+
+.message-body p {
+  margin: 0 0 22px;
+  color: #263d62;
+  font-size: 1.02rem;
+  line-height: 2.08;
+}
+
+.message-body footer {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid #dfe9f6;
+}
+
+.message-body strong,
+.message-body span {
+  display: block;
+}
+
+.message-body strong {
+  color: #081b3f;
+  font-size: 1.1rem;
+}
+
+.message-body span {
+  margin-top: 4px;
+  color: #65738a;
+}
+
 .os-detail-section {
   background: #fff;
 }
@@ -2936,6 +3002,7 @@ body {
   .home-hero-grid,
   .os-head,
   .clinic-grid,
+  .message-layout,
   .cta-slab {
     grid-template-columns: 1fr;
   }
@@ -2995,8 +3062,13 @@ body {
     grid-column: 1 / -1;
   }
 
+  .message-lead {
+    position: static;
+  }
+
   .service-card-grid,
   .about-grid,
+  .message-layout,
   .os-detail-grid,
   .business-map-panel,
   .os-cta-panel,
@@ -3038,6 +3110,10 @@ body {
   .news-heading h2,
   .cta-slab h2 {
     font-size: 1.66rem;
+  }
+
+  .cta-slab h2 {
+    white-space: normal;
   }
 
   .hero-stat-row,
@@ -3110,6 +3186,7 @@ body {
 
   .business-map-panel,
   .mission-panel,
+  .message-body,
   .os-cta-panel,
   .recruit-panel {
     padding: 26px 18px;

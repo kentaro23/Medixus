@@ -39,7 +39,7 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260501-startup-type";
+const assetVersion = "20260501-message-page-cta";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
@@ -113,9 +113,9 @@ function footer() {
         <div>
           <h2>私たちについて</h2>
           <a href="/about/">会社概要</a>
-          <a href="/about/#message">代表メッセージ</a>
           <a href="/about/#mission">Mission</a>
           <a href="/about/#vision">Vision</a>
+          <a href="/message/">代表メッセージ</a>
         </div>
         <div>
           <h2>事業内容</h2>
@@ -838,6 +838,31 @@ function aboutPage() {
   `;
 }
 
+function messagePage() {
+  return html`
+    ${subpageHead("代表メッセージ", "Message", "Medixus代表 大原健太郎からのメッセージ。")}
+
+    <section class="section page-main-section">
+      <div class="container message-layout">
+        <div class="message-lead reveal">
+          <p class="kicker">Founder Message</p>
+          <h2>医療の待ち時間とアクセス格差を、AIでなくす。</h2>
+          <span>Medixusは、誰もが必要なときに、必要な医療へ迷わずつながれる社会を目指しています。</span>
+        </div>
+        <article class="message-body reveal">
+          <p>医療は、人の生活にとって最も重要なインフラのひとつです。一方で、待ち時間、予約の取りづらさ、地域や時間帯によるアクセス格差、現場の事務負担など、まだ多くの非効率が残っています。</p>
+          <p>Medixusは、AIとテクノロジーを医療現場の運営に深く組み込み、患者体験と医療従事者の働き方の両方をアップデートしていきます。医療者が医療に集中でき、患者が必要な医療にすぐつながれる。そのための基盤をつくることが、私たちの使命です。</p>
+          <p>まだ始まったばかりの会社ですが、医療機関、研究機関、投資家、パートナーの皆さまとともに、次の医療インフラを社会実装していきます。</p>
+          <footer>
+            <strong>大原健太郎</strong>
+            <span>株式会社Medixus 代表取締役</span>
+          </footer>
+        </article>
+      </div>
+    </section>
+  `;
+}
+
 const newsItems = [
   ["2026.04.24", "プレスリリース", "株式会社Medixusを設立しました"],
   ["2026.04.22", "お知らせ", "Medixus OSのβ版を今夏リリース予定"],
@@ -1004,6 +1029,14 @@ const pages = [
     title: "会社概要 - 株式会社Medixus",
     description: "AI医療プラットフォームを開発する株式会社Medixus。",
     body: aboutPage,
+    schema: orgSchema,
+  },
+  {
+    slug: "message",
+    path: "message/index.html",
+    title: "代表メッセージ - Medixus",
+    description: "Medixus代表 大原健太郎からのメッセージ。",
+    body: messagePage,
     schema: orgSchema,
   },
   {
