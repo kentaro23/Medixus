@@ -2631,6 +2631,82 @@ body {
   line-height: 1.9;
 }
 
+.founder-message-card {
+  display: grid;
+  grid-template-columns: 184px minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+  margin-top: 28px;
+  padding: 30px;
+  border: 1px solid rgba(185, 205, 235, 0.72);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 18px 52px rgba(20, 67, 133, 0.09);
+}
+
+.founder-message-card h2 {
+  margin: 4px 0 10px;
+  color: #081b3f;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.2vw, 2.1rem);
+  line-height: 1.35;
+  font-feature-settings: "palt";
+}
+
+.founder-message-card p:not(.kicker) {
+  max-width: 780px;
+  margin: 0 0 20px;
+  color: #40536f;
+  line-height: 1.9;
+}
+
+.founder-photo-slot {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(166, 194, 233, 0.78);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 70% 22%, rgba(72, 153, 255, 0.22), transparent 8rem),
+    linear-gradient(145deg, #f7fbff, #eaf4ff);
+}
+
+.founder-photo-slot::before {
+  content: "";
+  position: absolute;
+  width: 44%;
+  aspect-ratio: 1;
+  top: 22%;
+  border: 2px solid rgba(7, 95, 218, 0.28);
+  border-radius: 50%;
+}
+
+.founder-photo-slot::after {
+  content: "";
+  position: absolute;
+  width: 64%;
+  height: 32%;
+  bottom: 16%;
+  border: 2px solid rgba(7, 95, 218, 0.24);
+  border-radius: 999px 999px 18px 18px;
+}
+
+.founder-photo-slot span {
+  position: relative;
+  z-index: 1;
+  align-self: end;
+  margin-bottom: 16px;
+  color: rgba(7, 95, 218, 0.52);
+  font-family: var(--font-tech);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .message-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
@@ -2641,6 +2717,11 @@ body {
 .message-lead {
   position: sticky;
   top: 110px;
+}
+
+.founder-photo-slot-large {
+  max-width: 280px;
+  margin-bottom: 28px;
 }
 
 .message-lead h2 {
@@ -3068,6 +3149,7 @@ body {
 
   .service-card-grid,
   .about-grid,
+  .founder-message-card,
   .message-layout,
   .os-detail-grid,
   .business-map-panel,
@@ -3175,8 +3257,13 @@ body {
 
   .service-card-grid,
   .recruit-card-grid,
+  .founder-message-card,
   .position-grid {
     grid-template-columns: 1fr;
+  }
+
+  .founder-photo-slot {
+    max-width: 220px;
   }
 
   .company-table div {

@@ -39,7 +39,7 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260501-message-page-cta";
+const assetVersion = "20260501-founder-message-photo";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
@@ -833,6 +833,17 @@ function aboutPage() {
             <h2>医療の待ち時間とアクセス格差をAIでなくす</h2>
           </div>
         </div>
+        <section class="founder-message-card reveal" id="message">
+          <div class="founder-photo-slot" aria-label="代表写真スペース">
+            <span>Photo</span>
+          </div>
+          <div>
+            <p class="kicker">Founder Message</p>
+            <h2>代表メッセージ</h2>
+            <p>医療の待ち時間とアクセス格差をAIでなくす。Medixusは、誰もが必要なときに必要な医療へつながれる社会を目指しています。</p>
+            <a class="button button-outline" href="/message/">詳しく読む</a>
+          </div>
+        </section>
       </div>
     </section>
   `;
@@ -845,6 +856,9 @@ function messagePage() {
     <section class="section page-main-section">
       <div class="container message-layout">
         <div class="message-lead reveal">
+          <div class="founder-photo-slot founder-photo-slot-large" aria-label="代表写真スペース">
+            <span>Photo</span>
+          </div>
           <p class="kicker">Founder Message</p>
           <h2>医療の待ち時間とアクセス格差を、AIでなくす。</h2>
           <span>Medixusは、誰もが必要なときに、必要な医療へ迷わずつながれる社会を目指しています。</span>
