@@ -39,7 +39,7 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260501-founder-message-photo";
+const assetVersion = "20260501-shareholder-investor";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
@@ -803,8 +803,8 @@ function aboutPage() {
     ["代表取締役", "大原健太郎"],
     ["所在地", "神奈川県相模原市"],
     ["資本金", "30万円"],
-    ["株主構成", "大原健太郎 100%"],
-    ["主要投資家", "Skyland Ventures（J-KISS）"],
+    ["株主構成", "代表取締役 CEO 大原 健太郎"],
+    ["主要投資家", "Skyland Ventures 5号投資事業有限責任組合"],
     ["事業内容", "医療プラットフォームの開発 / Medixus Clinicの企画・運営 / 医療機関向けBPOサービス"],
   ];
 
