@@ -14,6 +14,8 @@
   --radius: 8px;
   --font-sans: "Noto Sans JP", "Inter", "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-latin: "Inter", "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Zen Old Mincho", "Noto Sans JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-tech: "Space Grotesk", "Inter", "Noto Sans JP", system-ui, sans-serif;
   --weight-regular: 400;
   --weight-medium: 500;
   --weight-semibold: 600;
@@ -1426,8 +1428,10 @@ body {
   color: #081b3f;
   font-size: clamp(3.4rem, 5vw, 4.85rem);
   line-height: 1.25;
+  font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: 0;
+  font-feature-settings: "palt";
 }
 
 .hero-line {
@@ -1437,6 +1441,21 @@ body {
 
 .home-hero-copy h1 .accent {
   color: #075ed8;
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+}
+
+.home-hero-copy h1 .accent::after {
+  content: "";
+  position: absolute;
+  left: 0.08em;
+  right: -0.05em;
+  bottom: 0.04em;
+  z-index: -1;
+  height: 0.28em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(7, 95, 218, 0.13), rgba(67, 180, 255, 0.04));
 }
 
 .hero-lead-v2 {
@@ -1634,7 +1653,9 @@ body {
   color: #081b3f;
   font-size: clamp(1.72rem, 2.35vw, 2.28rem);
   line-height: 1.36;
+  font-family: var(--font-display);
   font-weight: 700;
+  font-feature-settings: "palt";
 }
 
 .section-header h2::after {
@@ -2374,14 +2395,18 @@ body {
   color: #081b3f;
   font-size: clamp(2rem, 3.5vw, 3.1rem);
   line-height: 1.24;
+  font-family: var(--font-display);
   font-weight: 700;
+  font-feature-settings: "palt";
 }
 
 .subpage-label {
   margin: 0 0 18px;
   color: var(--blue);
   font-size: 0.78rem;
-  font-weight: var(--weight-semibold);
+  font-family: var(--font-tech);
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -2404,7 +2429,9 @@ body {
   color: #081b3f;
   font-size: clamp(1.45rem, 2.1vw, 2rem);
   line-height: 1.42;
+  font-family: var(--font-display);
   font-weight: 700;
+  font-feature-settings: "palt";
 }
 
 .service-card-grid {
@@ -2591,6 +2618,8 @@ body {
 
 .mission-panel h2 {
   color: var(--blue);
+  font-family: var(--font-display);
+  font-feature-settings: "palt";
 }
 
 .mission-panel span {
@@ -2766,6 +2795,9 @@ body {
 .recruit-panel h2 {
   margin: 0 0 24px;
   color: #10264d;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.1vw, 2rem);
+  font-feature-settings: "palt";
 }
 
 .recruit-card-grid {
@@ -2820,15 +2852,18 @@ body {
   margin: 0 0 10px;
   color: var(--blue);
   font-size: 0.78rem;
-  font-weight: var(--weight-semibold);
-  letter-spacing: 0.04em;
+  font-family: var(--font-tech);
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .position-card h3 {
   margin: 0 0 12px;
   color: #10264d;
-  font-size: 1.35rem;
+  font-family: var(--font-display);
+  font-size: 1.48rem;
+  font-feature-settings: "palt";
 }
 
 .position-card span {
