@@ -39,7 +39,7 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260501-shareholder-investor";
+const assetVersion = "20260507-news-update";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
@@ -325,9 +325,9 @@ function homePage() {
           <a class="button button-outline" href="/news/">一覧を見る</a>
         </div>
         <div class="news-table reveal">
-          ${newsRow("2026.04.24", "プレスリリース", "株式会社Medixusを設立しました")}
+          ${newsRow("2026.04.22", "プレスリリース", "株式会社Medixusを設立しました")}
           ${newsRow("2026.04.22", "お知らせ", "Medixus OSのβ版を今夏リリース予定")}
-          ${newsRow("2026.04.20", "お知らせ", "1号店を相模大野エリアにオープン予定")}
+          ${newsRow("2026.04.15", "お知らせ", "パートナー提携に関するお問い合わせ窓口を開設")}
         </div>
       </div>
     </section>
@@ -878,11 +878,9 @@ function messagePage() {
 }
 
 const newsItems = [
-  ["2026.04.24", "プレスリリース", "株式会社Medixusを設立しました"],
+  ["2026.04.22", "プレスリリース", "株式会社Medixusを設立しました"],
   ["2026.04.22", "お知らせ", "Medixus OSのβ版を今夏リリース予定"],
-  ["2026.04.20", "お知らせ", "1号店を相模大野エリアにオープン予定"],
   ["2026.04.15", "お知らせ", "パートナー提携に関するお問い合わせ窓口を開設"],
-  ["2026.04.10", "メディア", "代表 大原のインタビューが掲載されました"],
 ];
 
 function newsPage() {
