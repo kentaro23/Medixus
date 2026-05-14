@@ -39,7 +39,9 @@ const orgSchema = {
 
 const html = String.raw;
 const siteUrl = "https://medixus.jp";
-const assetVersion = "20260508-tab-icon";
+const contactPath = "/contact/";
+const contactApiPath = "/api/contact";
+const assetVersion = "20260514-resend-contact";
 
 function image(src, alt, className = "") {
   return `<img src="${src}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
@@ -47,6 +49,10 @@ function image(src, alt, className = "") {
 
 function selectOptions() {
   return contactOptions.map((option) => `<option value="${option}">${option}</option>`).join("");
+}
+
+function contactLink(query = "") {
+  return `${contactPath}${query}`;
 }
 
 function faqSchema(items) {
@@ -91,8 +97,8 @@ function header(activePath) {
         <div class="nav-menu" data-nav-menu>
           <div class="nav-links">${links}</div>
           <div class="nav-actions">
-            <a class="button button-outline nav-contact" href="/contact/?type=partner">パートナー・提携のご相談</a>
-            <a class="button button-accent nav-contact" href="/contact/">お問い合わせ</a>
+            <a class="button button-outline nav-contact" href="${contactLink("?type=partner")}">パートナー・提携のご相談</a>
+            <a class="button button-accent nav-contact" href="${contactLink()}">お問い合わせ</a>
           </div>
         </div>
       </nav>
@@ -134,8 +140,8 @@ function footer() {
           <a href="/recruit/">採用メッセージ</a>
           <a href="/recruit/#positions">募集職種一覧</a>
           <div class="footer-actions">
-            <a class="footer-button" href="/contact/?type=partner">パートナー・提携のご相談</a>
-            <a class="footer-button" href="/contact/">お問い合わせ</a>
+            <a class="footer-button" href="${contactLink("?type=partner")}">パートナー・提携のご相談</a>
+            <a class="footer-button" href="${contactLink()}">お問い合わせ</a>
           </div>
         </div>
       </div>
@@ -239,7 +245,7 @@ function homeHero() {
           <p class="hero-lead-v2">AIとテクノロジーの力で、時間とアクセス格差をなくし、いつでも、どこでも、誰もが最高の医療を受けられる社会を実現します。</p>
           <div class="hero-actions">
             <a class="button button-primary" href="/business/">詳しく見る</a>
-            <a class="button button-outline" href="/contact/">お問い合わせ</a>
+            <a class="button button-outline" href="${contactLink()}">お問い合わせ</a>
           </div>
           <div class="hero-stat-row">
             ${heroStat("2030年までに", "300", "店舗", "clinic")}
@@ -342,7 +348,7 @@ function homePage() {
         <div class="cta-card reveal">
           <h3>パートナー・提携のご相談</h3>
           <p>サービス導入のご相談、提携に関するお問い合わせなど、お気軽にご連絡ください。</p>
-          <a class="button button-primary" href="/contact/?type=partner">お問い合わせはこちら</a>
+          <a class="button button-primary" href="${contactLink("?type=partner")}">お問い合わせはこちら</a>
         </div>
       </div>
     </section>
@@ -498,7 +504,7 @@ function clinicPage() {
     <section class="section section-cta">
       <div class="container center">
         <h2>Medixus Clinicに関するご相談はこちら。</h2>
-        <a class="button button-primary" href="/contact/?type=partner">パートナー・提携のご相談</a>
+        <a class="button button-primary" href="${contactLink("?type=partner")}">パートナー・提携のご相談</a>
       </div>
     </section>
   `;
@@ -542,7 +548,7 @@ function bpoPage() {
     <section class="section section-cta">
       <div class="container center">
         <h2>BPOサービスに関するご相談はこちら。</h2>
-        <a class="button button-primary" href="/contact/?type=partner">パートナー・提携のご相談</a>
+        <a class="button button-primary" href="${contactLink("?type=partner")}">パートナー・提携のご相談</a>
       </div>
     </section>
   `;
@@ -586,7 +592,7 @@ function osPage() {
             <h2>Medixus OSの導入をご検討の方へ</h2>
             <p>デモのご相談や資料請求はこちらからお問い合わせください。</p>
           </div>
-          <a class="button button-light" href="/contact/?type=os">お問い合わせ</a>
+          <a class="button button-light" href="${contactLink("?type=os")}">お問い合わせ</a>
         </div>
       </div>
     </section>
@@ -708,7 +714,7 @@ function recruitBenefit(icon, title, copy) {
 }
 
 function positionCard(position) {
-  const href = `/contact/?type=recruit&job=${encodeURIComponent(position.title)}`;
+  const href = contactLink(`?type=recruit&job=${encodeURIComponent(position.title)}`);
   return html`
     <article class="position-card reveal">
       <p>${position.type}</p>
@@ -729,7 +735,7 @@ function irPage() {
       title: "AI医療オペレーションの成長基盤をつくる。",
       lead: "Medixus ClinicとMedixus OSを通じて、クリニック運営の新しい標準を社会実装していきます。",
       imageSrc: "/assets/images/ir-growth.jpg",
-      primary: ["投資に関するお問い合わせ", "/contact/?type=ir", "primary"],
+      primary: ["投資に関するお問い合わせ", contactLink("?type=ir"), "primary"],
     })}
 
     <section class="section">
@@ -773,11 +779,14 @@ function irPage() {
             <li>ピッチ資料は確認後、メールにてご案内します。</li>
           </ul>
         </div>
-        <form class="form-card reveal" data-static-form>
+        <form class="form-card reveal" action="${contactApiPath}" method="post" data-contact-submit>
           <h3>ピッチ資料をダウンロード</h3>
-          <label>氏名<input type="text" required></label>
-          <label>会社名<input type="text" required></label>
-          <label>メール<input type="email" required></label>
+          <input type="hidden" name="type" value="ir">
+          <input type="hidden" name="request" value="pitch">
+          <input type="hidden" name="redirect" value="/ir/">
+          <label>氏名<input type="text" name="name" required></label>
+          <label>会社名<input type="text" name="company" required></label>
+          <label>メール<input type="email" name="email" required></label>
           <button class="button button-primary" type="submit">PDFリンクをメール送信</button>
           <p class="form-status" aria-live="polite"></p>
         </form>
@@ -787,7 +796,7 @@ function irPage() {
     <section class="section section-cta">
       <div class="container center">
         <h2>投資に関するご相談はこちら。</h2>
-        <a class="button button-primary" href="/contact/?type=ir">投資に関するお問い合わせ</a>
+        <a class="button button-primary" href="${contactLink("?type=ir")}">投資に関するお問い合わせ</a>
       </div>
     </section>
   `;
@@ -913,7 +922,9 @@ function contactPage() {
 
     <section class="section">
       <div class="container narrow">
-        <form class="contact-form reveal" data-contact-form data-static-form>
+        <form class="contact-form reveal" action="${contactApiPath}" method="post" data-contact-form data-contact-submit>
+          <input type="hidden" name="source" value="corporate-site">
+          <input type="hidden" name="redirect" value="/contact/">
           <div class="form-two">
             <label>お名前（必須）<input type="text" name="name" required></label>
             <label>会社名・所属（任意）<input type="text" name="company"></label>

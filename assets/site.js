@@ -100,6 +100,15 @@ if (contactType) {
   }
 }
 
+const params = new URLSearchParams(window.location.search);
+const formStatus = document.querySelector(".form-status");
+if (formStatus && params.get("sent") === "1") {
+  formStatus.textContent = "ありがとうございます。2営業日以内にご連絡します。";
+}
+if (formStatus && params.has("error")) {
+  formStatus.textContent = "送信できませんでした。時間を置いてもう一度お試しください。";
+}
+
 document.querySelectorAll("[data-static-form]").forEach((form) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
